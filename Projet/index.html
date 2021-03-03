@@ -5,17 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Jeu2Massacre</title>
 </head>
 
 <body>
-    <div>Drag Winston into the rectangle</div>
-    <div class="add-picture">
-        <img id="winston" src="https://www.kasandbox.org/programming-images/avatars/aqualine-seed.png">        
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-12" id="dropzone"></div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+                <div class="row justify-content-center">
+                    <div class="col-12">Drag Winston into the rectangle</div>
+                    <div class="add-picture col-12">
+                        <img id="winston" src="https://www.kasandbox.org/programming-images/avatars/aqualine-seed.png">
+                    </div>
+                    <div class="col-12 space-10"></div>
+                    <div class="col-4"></div>
+                    <button class="col-4">
+                        <div class="row">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="col-12 feather feather-rotate-ccw">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="col-4"></div>
+                    <div class="col-12 space-10"></div>
+                    <div class="add-picture col-6" style="height: 100%;">
+                        <div class="row justify-content-center">
+                            <img class="col-12" id="winston" src="https://www.kasandbox.org/programming-images/avatars/aqualine-seed.png">
+                        </div>
+                    </div>
+                    <div class="add-picture col-6" style="height: 100%;">
+                        <div class="row justify-content-center">
+                            <img class="col-12" id="winston" src="https://www.kasandbox.org/programming-images/avatars/aqualine-seed.png">
+                        </div>
+                    </div>
+                    <div class="col-12 space-10"></div>
+                    <div class="col-2"></div>
+                    <button class="col-4">
+                        <div class="row">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="col-12 feather feather-rotate-ccw">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="col-4">
+                        <div class="row">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="col-12 feather feather-rotate-ccw">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="col-2"></div>
+                    <div class="col-12 space-10"></div>
+                    <img class="col-12" id="winston" src="https://www.kasandbox.org/programming-images/avatars/aqualine-seed.png">
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="dropzone"></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="js/script.js"></script>
+
 </html>
