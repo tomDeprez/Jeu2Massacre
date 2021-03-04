@@ -24,10 +24,12 @@ $jsonData = new JsonData();
 
 session_start();
 if (isset($_SESSION['User'])) {
-    $user = unserialize($_SESSION['User']);
+    $user = $user->unserialize(json_decode($_SESSION['User']));
 }
 
 //
+$jsonData->setCode(1);
+$jsonData->setMessage("Succès");
 
 $methodePost = "";
 $methodeGet = "";
@@ -55,6 +57,9 @@ if ($methodeGet == "getAllScore") {
 }
 if ($methodeGet == "getUserConnexion") {
     $jsonData = $order->getUserConnexion($param, $jsonData, $user);
+}
+if ($methodeGet == "getUserDeconnexion") {
+    $_SESSION['User'] = null;
 }
 
 //----------------POST

@@ -8,37 +8,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>Connexion</title>
+    <title>Inscription</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="col-12 space-center"></div>
-            <div class="col-3"></div>
-            <div class="col-6" id="back">
-            </div>
-            <div class="col-3"></div>
-            <?php
-            session_start();
-            if (isset($_SESSION['User'])) {
-                $user = json_decode($_SESSION['User']); ?>
-            <div class="col-3"></div>
-            <div class="col-6">
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        <h1 style="text-align: center;">Bienvenue <?php echo $user->pseudo ?> !</h1>
-                    </div>
-                    <div class="col-12 space-30"></div>
-                    <button onclick="document.location.href='./';" class="btn btn-primary col-5">Retourner sur le jeu</button>
-                    <div class="col-2"></div>
-                    <button onclick="deconnexion(event)" class="btn btn-primary col-5">Déconnexion</button>
-                </div>
-            </div>
-            <div class="col-3"></div>
-            <?php
-            } else {
-                ?>
             <div class="col-3"></div>
             <form class="col-6" id="myForm">
                 <div class="row">
@@ -52,16 +28,18 @@
                         <input type="password" name="password" class="form-control" id="exampleInputPassword1"
                             placeholder="Entrez votre mot de passe">
                     </div>
+                    <div class="form-group col-12">
+                        <label for="exampleInputPassword1">Confirmez password</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                            placeholder="Confirmez votre mot de passe">
+                    </div>
                     <div class=col-12>
-                        <button onclick="connexion(event)" class="btn btn-primary col-3">Connexion</button>
-                        <a class="btn btn-primary col-3 float-right" href="inscription.php">Inscription</a>
+                        <button onclick="connexion(event)" class="btn btn-primary col-3">Inscription</button>
+                        <a class="btn btn-primary col-3 float-right" href="connexion.php">Connexion</a>
                     </div>
                 </div>
             </form>
             <div class="col-3"></div>
-            <?php
-            }
-            ?>
         </div>
     </div>
 </body>
@@ -96,29 +74,6 @@
             type: "POST",
             url: "php/Controller/PrincipalController.php",
             data: "GET=getUserConnexion&PARAM=" + param,
-            success: function(retour) {
-                var retour = JSON.parse(retour);
-                document.getElementById("back").innerHTML = "<div class='alert alert-" + arrayInfo[retour
-                        .code] + "' id='alert' role='alert'><strong>" + arrayMsg[retour.code] +
-                    "!</strong> " + retour.message + "!</div>";
-                window.setTimeout(function() {
-                    $(".alert").fadeTo(500, 0).slideUp(500, function() {
-                        $(this).remove();
-                        if (retour.code == 1) {
-                            document.location.reload();
-                        }
-                    });
-                }, 1000);
-            }
-        });
-    }
-
-    function deconnexion(ev) {
-        ev.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: "php/Controller/PrincipalController.php",
-            data: "GET=getUserDeconnexion",
             success: function(retour) {
                 var retour = JSON.parse(retour);
                 document.getElementById("back").innerHTML = "<div class='alert alert-" + arrayInfo[retour
