@@ -1,20 +1,20 @@
 <?php
 
-class User
+class Score
 {
     private $dbh;
     private $id;
-    private $pseudo;
-    private $password;
-    private $type;
+    private $user;
+    private $game;
+    private $score;
 
     public function __construct($connexion)
     {
         $this->dbh = $connexion->getConnexion();
     }
 
-    function getCheckUserConnexion($user, $password){
-        
+    public function getAllScore()
+    {
     }
 
     public function jsonSerialize()
@@ -22,9 +22,9 @@ class User
         return
             [
                 'id'   => $this->id,
-                'pseudo' => $this->pseudo,
-                'password' => $this->password,
-                'type' => $this->type,
+                'user' => $this->user,
+                'game' => $this->game,
+                'score' => $this->score,
             ];
     }
 }

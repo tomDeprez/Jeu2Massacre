@@ -1,9 +1,26 @@
 <?php
 
-class JsonData{
-    protected $code;
-    protected $data;
-    protected $message;
+class JsonData
+{
+    private $code;
+    private $data;
+    private $message;
+
+
+    public function setCode($code)
+    {
+        $this->code = $code;
+    }
+
+    public function setData($data)
+    {
+        $this->data = $data;
+    }
+
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
 
     public function jsonSerialize()
     {
