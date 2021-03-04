@@ -10,13 +10,20 @@ foreach ($global as $globalName)
         }
     }
 }
+
+$connexion = new Connexion();
+$user = new User($connexion);
+$score = new Score($connexion);
+$game = new Game($connexion);
+//--
 $order = new Order();
-$user = new User();
 $jsonData = new JsonData();
+//--
 
 //User connecté 
 
-if ($_SESSION['User'] != "") {
+session_start();
+if (isset($_SESSION['User'])) {
     $user = unserialize($_SESSION['User']);
 }
 
@@ -28,6 +35,9 @@ $methodeGet = "";
 if (isset($_POST['GET'])) {
     $methodeGet = $_POST['GET'];
 }
+if (isset($_GET['GET'])) {
+    $methodeGet = $_GET['GET'];
+}
 if (isset($_POST['POST'])) {
     $methodePost = $_POST['POST'];
 }
@@ -38,10 +48,13 @@ if (isset($_POST['PARAM'])) {
 //----------------GET
 
 if ($methodeGet == "getScore") {
-    $jsonData = $order->getScore($jsonData);
+    $jsonData = $order->getScore($param, $jsonData, $score);
+}
+if ($methodeGet == "getAllScore") {
+    $jsonData = $order->getAllScore($jsonData, $score);
 }
 if ($methodeGet == "getUserConnexion") {
-    $jsonData = $order->getUserConnexion($param, $jsonData);
+    $jsonData = $order->getUserConnexion($param, $jsonData, $user);
 }
 
 //----------------POST
@@ -51,4 +64,4 @@ if ($methodePost == "postUser") {
     # code...
 }
 
-echo json_encode($jsonData);
+echo json_encode($jsonData->jsonSerialize());
