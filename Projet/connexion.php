@@ -75,9 +75,9 @@
         "warning"
     ];
     var arrayMsg = [
-        "Erreur",
-        "Succès",
-        "Attention"
+        "🔴Erreur",
+        "😊Succès",
+        "⚠️Attention"
     ];
 
     function connexion(ev) {

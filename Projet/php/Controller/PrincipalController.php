@@ -65,8 +65,8 @@ if ($methodeGet == "getUserDeconnexion") {
 //----------------POST
 
 
-if ($methodePost == "postUser") {
-    # code...
+if ($methodePost == "postUserInscription") {
+    $jsonData = $order->postUserInscription($param, $jsonData, $user);
 }
 
 echo json_encode($jsonData->jsonSerialize());

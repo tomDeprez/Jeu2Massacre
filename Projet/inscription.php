@@ -16,6 +16,10 @@
         <div class="row">
             <div class="col-12 space-center"></div>
             <div class="col-3"></div>
+            <div class="col-6" id="back">
+            </div>
+            <div class="col-3"></div>
+            <div class="col-3"></div>
             <form class="col-6" id="myForm">
                 <div class="row">
                     <div class="form-group col-12">
@@ -30,11 +34,11 @@
                     </div>
                     <div class="form-group col-12">
                         <label for="exampleInputPassword1">Confirmez password</label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                        <input type="password" name="password-confirm" class="form-control" id="exampleInputPassword1"
                             placeholder="Confirmez votre mot de passe">
                     </div>
                     <div class=col-12>
-                        <button onclick="connexion(event)" class="btn btn-primary col-3">Inscription</button>
+                        <button onclick="inscription(event)" class="btn btn-primary col-3">Inscription</button>
                         <a class="btn btn-primary col-3 float-right" href="connexion.php">Connexion</a>
                     </div>
                 </div>
@@ -53,12 +57,12 @@
         "warning"
     ];
     var arrayMsg = [
-        "Erreur",
-        "Succès",
-        "Attention"
+        "🔴Erreur",
+        "😊Succès",
+        "⚠️Attention"
     ];
 
-    function connexion(ev) {
+    function inscription(ev) {
         ev.preventDefault();
         var myForm = document.getElementById('myForm');
         formData = new FormData(myForm);
@@ -73,7 +77,7 @@
         $.ajax({
             type: "POST",
             url: "php/Controller/PrincipalController.php",
-            data: "GET=getUserConnexion&PARAM=" + param,
+            data: "POST=postUserInscription&PARAM=" + param,
             success: function(retour) {
                 var retour = JSON.parse(retour);
                 document.getElementById("back").innerHTML = "<div class='alert alert-" + arrayInfo[retour
@@ -83,7 +87,7 @@
                     $(".alert").fadeTo(500, 0).slideUp(500, function() {
                         $(this).remove();
                         if (retour.code == 1) {
-                            document.location.reload();
+                            document.location.href='connexion.php';
                         }
                     });
                 }, 1000);
