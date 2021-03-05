@@ -3,6 +3,7 @@ class Order
 {
     function getScore(){        
     }
+    
     function getAllScore($jsonData, $score){
         $retourScore = $score->getAllScore();
         if ($retourScore == null || count($retourScore) == 0) {
@@ -41,7 +42,7 @@ class Order
             $jsonData->setCode(2);
             $jsonData->setMessage("Le pseudo / password obligatoire");
         }else {
-            $user = $user->getUser($pseudo);
+            $user = $user->getUser(trim($pseudo));
             if ($user->getId() != null) {
                 $jsonData->setData(null);
                 $jsonData->setCode(2);

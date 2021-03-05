@@ -33,6 +33,10 @@
                     <button onclick="document.location.href='./';" class="btn btn-primary col-5">Retourner sur le jeu</button>
                     <div class="col-2"></div>
                     <button onclick="deconnexion(event)" class="btn btn-primary col-5">Déconnexion</button>
+                    <div class="col-12 space-30"></div>
+                    <button onclick="document.location.href='./';" class="btn btn-primary col-5">Nouvelle partie</button>
+                    <div class="col-2"></div>
+                    <a href="historique.php" class="btn btn-primary col-5">Historique</a>
                 </div>
             </div>
             <div class="col-3"></div>
