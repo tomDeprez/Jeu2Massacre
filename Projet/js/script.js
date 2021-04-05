@@ -33,6 +33,7 @@ $('#cardPile div div div').droppable({
 
 
 function handleCardDrop(event, ui) {
+    return;
     var $el = $("<img class='element " + $nb + "' src='" + $source + "' height='100px'>");
     $(this).append($el);
     $(this).droppable('disable');
@@ -55,30 +56,42 @@ function handleCardDrop(event, ui) {
 
 
 
-$nbrClick = 1;
+$nbrClick = 0;
+$score = 0;
+$score1 = 0;
+$score2 = 0;
+$score3 = 0;
 
 $('body').on('click', '#ballon', function () {
+    $nbrClick++;
+    //console.log(10 - ($('#cardPile .element').length));
 
     if ($nbrClick > 3) {
-
-        alert("Score : " + $score + "\nRecommencer");
+        return;
     }
     else if ($nbrClick === 1) {
-        $score = 0;
-        $score += (10 - ($('#cardPile .element').length)) * 3;
         fallElement();
+        setTimeout(function () {
+            $score1 = (10 - ($('#cardPile .element').length)) * 3;
+            console.log("Score : " + $score1);
+        }, 500);
+
     }
     else if ($nbrClick === 2) {
-        $score += (10 - ($('#cardPile .element').length)) * 2;
         fallElement();
+        setTimeout(function () {
+            $score2 = ((10 - ($score1 / 3)) - ($('#cardPile .element').length)) * 2;
+            console.log("Score : " + $score2);
+        }, 500);
     }
     else if ($nbrClick === 3) {
-        $score += (10 - ($('#cardPile .element').length));
         fallElement();
+        setTimeout(function () {
+            $score3 = ((10 - (($score1 / 3) + ($score2 / 2))) - ($('#cardPile .element').length));
+            $score = $score1 + $score2 + $score3;
+            alert("Score : " + $score + "\nRecommencer");
+        }, 500);
     }
-
-    $nbrClick++;
-    console.log(10 - ($('#cardPile .element').length));
 });
 
 function fallElement() {
@@ -90,6 +103,8 @@ function fallElement() {
         $('.' + random2 + '').css('animation', 'float 0.5s linear');
         setTimeout(function () { $('.' + random2 + '').remove() }, 450);
     }
+
+
 }
 
 function getNbrCan() {

@@ -46,8 +46,7 @@
       height: auto;
       transform: rotate(180deg);
     }
-    100% {
-      
+    100% {      
       transform: translatex(-20px);
       width: 0%;
       height: auto;
