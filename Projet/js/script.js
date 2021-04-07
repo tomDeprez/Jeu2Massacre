@@ -1,19 +1,3 @@
-// $("#dropzone").droppable({
-//     drop: function (event, ui) {
-//         $(this).css('background', 'white');
-//     },
-//     over: function (event, ui) {
-//         $(this).css('background', 'rgb(236, 236, 236)');
-//     },
-//     out: function (event, ui) {
-//         $(this).css('background', 'black');
-//     }
-// });
-// $("#winston").draggable({ containment: "#dropzone" });
-
-
-
-
 $('.element').draggable({
     cursor: 'move',
     revert: true,
@@ -33,7 +17,6 @@ $('#cardPile div div div').droppable({
 
 
 function handleCardDrop(event, ui) {
-    return;
     var $el = $("<img class='element " + $nb + "' src='" + $source + "' height='100px'>");
     $(this).append($el);
     $(this).droppable('disable');
@@ -90,6 +73,9 @@ $('body').on('click', '#ballon', function () {
             $score3 = ((10 - (($score1 / 3) + ($score2 / 2))) - ($('#cardPile .element').length));
             $score = $score1 + $score2 + $score3;
             alert("Score : " + $score + "\nRecommencer");
+            var retour = new Partie("Partie1", $score);
+            retour.setDate();
+            retour.AfficherPartie();
         }, 500);
     }
 });
