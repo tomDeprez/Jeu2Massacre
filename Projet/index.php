@@ -189,62 +189,82 @@
 
 
                         <!-- TEST -->
-                        <div id="cardPile" style="position: relative; top:100px">
+                        <div id="cardPile" style="position: relative; top:30px">
                             <div class="row"
-                                style="position: absolute; top: 0; left: 50%; transform: translate(-50%,0);">
+                                style="position: absolute; top: 80px; left: 50%; transform: translate(-50%,0);">
                                 <div class="col-12">
-                                <div style="border: medium none; width: 50.3333px; height: 100px;" class="ui-droppable ui-droppable-disabled">
-                                    <img class="element 1" src="img/can2.png" height="100px"></div>
+                                    <div style="border: medium none; width: 50.3333px; height: 100px;"
+                                        class="ui-droppable ui-droppable-disabled">
+                                        <img class="element 1" src="img/can2.png" height="100px">
+                                    </div>
                                 </div>
                             </div>
                             <div class="row"
-                                style="position: absolute; top: 110px; left: 50%; transform: translate(-50%,0);">
+                                style="position: absolute; top: 170px; left: 50%; transform: translate(-50%,0);">
                                 <div class="col-6">
-                                <div style="border: medium none; width: 50.3333px; height: 100px;" class="ui-droppable ui-droppable-disabled">
-                                    <img class="element 2" src="img/can2.png" height="100px"></div>
+                                    <div style="border: medium none; width: 50.3333px; height: 100px;"
+                                        class="ui-droppable ui-droppable-disabled">
+                                        <img class="element 2" src="img/can2.png" height="100px">
+                                    </div>
                                 </div>
                                 <div class="col-6">
-                                <div style="border: medium none; width: 50.3333px; height: 100px;" class="ui-droppable ui-droppable-disabled">
-                                    <img class="element 3" src="img/can2.png" height="100px"></div>
+                                    <div style="border: medium none; width: 50.3333px; height: 100px;"
+                                        class="ui-droppable ui-droppable-disabled">
+                                        <img class="element 3" src="img/can2.png" height="100px">
+                                    </div>
                                 </div>
                             </div>
                             <div class="row"
-                                style="position: absolute; top: 220px; left: 50%; transform: translate(-50%,0);">
+                                style="position: absolute; top: 250px; left: 50%; transform: translate(-50%,0);">
                                 <div class="col-4">
-                                <div style="border: medium none; width: 50.3333px; height: 100px;" class="ui-droppable ui-droppable-disabled">
-                                    <img class="element 4" src="img/can2.png" height="100px"></div>
+                                    <div style="border: medium none; width: 50.3333px; height: 100px;"
+                                        class="ui-droppable ui-droppable-disabled">
+                                        <img class="element 4" src="img/can2.png" height="100px">
+                                    </div>
                                 </div>
                                 <div class="col-4">
-                                <div style="border: medium none; width: 50.3333px; height: 100px;" class="ui-droppable ui-droppable-disabled">
-                                    <img class="element 5" src="img/can2.png" height="100px"></div>
+                                    <div style="border: medium none; width: 50.3333px; height: 100px;"
+                                        class="ui-droppable ui-droppable-disabled">
+                                        <img class="element 5" src="img/can2.png" height="100px">
+                                    </div>
                                 </div>
                                 <div class="col-4">
-                                <div style="border: medium none; width: 50.3333px; height: 100px;" class="ui-droppable ui-droppable-disabled">
-                                    <img class="element 6" src="img/can2.png" height="100px"></div>
+                                    <div style="border: medium none; width: 50.3333px; height: 100px;"
+                                        class="ui-droppable ui-droppable-disabled">
+                                        <img class="element 6" src="img/can2.png" height="100px">
+                                    </div>
                                 </div>
                             </div>
                             <div class="row"
                                 style="position: absolute; top: 330px; left: 50%; transform: translate(-50%,0);">
                                 <div class="col-3">
-                                <div style="border: medium none; width: 50.3333px; height: 100px;" class="ui-droppable ui-droppable-disabled">
-                                    <img class="element 7" src="img/can2.png" height="100px"></div>
+                                    <div style="border: medium none; width: 50.3333px; height: 100px;"
+                                        class="ui-droppable ui-droppable-disabled">
+                                        <img class="element 7" src="img/can2.png" height="100px">
+                                    </div>
                                 </div>
                                 <div class="col-3">
-                                <div style="border: medium none; width: 50.3333px; height: 100px;" class="ui-droppable ui-droppable-disabled">
-                                    <img class="element 8" src="img/can2.png" height="100px"></div>
+                                    <div style="border: medium none; width: 50.3333px; height: 100px;"
+                                        class="ui-droppable ui-droppable-disabled">
+                                        <img class="element 8" src="img/can2.png" height="100px">
+                                    </div>
                                 </div>
                                 <div class="col-3">
-                                <div style="border: medium none; width: 50.3333px; height: 100px;" class="ui-droppable ui-droppable-disabled">
-                                    <img class="element 9" src="img/can2.png" height="100px"></div>
+                                    <div style="border: medium none; width: 50.3333px; height: 100px;"
+                                        class="ui-droppable ui-droppable-disabled">
+                                        <img class="element 9" src="img/can2.png" height="100px">
+                                    </div>
                                 </div>
                                 <div class="col-3">
-                                <div style="border: medium none; width: 50.3333px; height: 100px;" class="ui-droppable ui-droppable-disabled">
-                                    <img class="element 10" src="img/can2.png" height="100px"></div>
+                                    <div style="border: medium none; width: 50.3333px; height: 100px;"
+                                        class="ui-droppable ui-droppable-disabled">
+                                        <img class="element 10" src="img/can2.png" height="100px">
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                      
+
 
                     </div>
                 </div>
@@ -252,11 +272,31 @@
             <div class="col-1"></div>
             <div class="col-2">
                 <div class="row justify-content-center">
-                    <div class="col-12">Drag Winston into the rectangle</div>
-                    <div class="add-picture col-12">
-                        <img class="" src="https://fakeimg.pl/50x100" height="100px">
+                    <div class="add-picture col-12" style="height: 100%;">
+                        <div class="row">
+                            <div class="file-upload col-12">
+                                <div class="row">
+                                    <button class="file-upload-btn col-12" type="button"
+                                        onclick="$('.file-upload-input').trigger('click')">Ajouter une image</button>
+
+                                    <div class="image-upload-wrap col-12" style="height: 40px;">
+                                        <input class="file-upload-input" type='file' onchange="readURL(this);"
+                                            accept="image/*" />
+                                        <div class="drag-text">
+                                        </div>
+                                    </div>
+                                    <div class="file-upload-content col-12">
+                                        <div class="row">
+                                            <img class="file-upload-image col-12" src="#" />
+                                            <div class="image-title-wrap">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-12 space-10"></div>
+                    <div class="col-12 space-30"></div>
                     <div class="col-4"></div>
                     <button class="col-4">
                         <div class="row">
@@ -313,6 +353,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/addPicture.js"></script>
 <script src="js/class/partie.js"></script>
 <script src="js/class/image.js"></script>
 

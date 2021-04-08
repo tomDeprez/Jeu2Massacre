@@ -12,7 +12,7 @@ class Game
         $this->dbh = $connexion->getConnexion();
     }
 
-    public function posteGameWithIdUser($game, $name, $scoreSave, $idUser){
+    public function posteGameWithIdUser($game, $name, $idUser){
         $stmt = $this->dbh->prepare("INSERT INTO `game`(`game`, `name`) VALUES (:game,:name)");
         $stmt->bindValue(':game', $game, PDO::PARAM_STR);
         $stmt->bindValue(':name', $name, PDO::PARAM_STR);
@@ -21,7 +21,6 @@ class Game
         $stmt = $this->dbh->prepare("INSERT INTO `score`(`idUser`, `idGame`, `score`) VALUES (:idUser,:idGame,:score)");
         $stmt->bindValue(':idUser', $idUser, PDO::PARAM_INT);
         $stmt->bindValue(':idGame', $id, PDO::PARAM_INT);
-        $stmt->bindValue(':score', $scoreSave, PDO::PARAM_STR);
         $stmt->execute();
     }
     public function getGameWithIdGame($id){
