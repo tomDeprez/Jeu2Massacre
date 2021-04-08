@@ -313,5 +313,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/class/partie.js"></script>
+<script src="js/class/image.js"></script>
 
 </html>
