@@ -22,13 +22,19 @@ class JsonData
         $this->message = $message;
     }
 
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
     public function jsonSerialize()
     {
         return
             [
                 'code'   => $this->code,
                 'data' => $this->data,
-                'message' => $this->message,
+                'message' => $this->message,               
+                'user' => $this->user,
             ];
     }
 }

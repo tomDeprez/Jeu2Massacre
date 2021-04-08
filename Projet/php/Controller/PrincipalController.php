@@ -21,10 +21,10 @@ $jsonData = new JsonData();
 //--
 
 //User connecté 
-
+$userReturne = "";
 session_start();
 if (isset($_SESSION['User'])) {
-    $user = $user->unserialize(json_decode($_SESSION['User']));
+    $userReturne = $user->unserialize(json_decode($_SESSION['User']));
 }
 
 //
@@ -61,12 +61,19 @@ if ($methodeGet == "getUserConnexion") {
 if ($methodeGet == "getUserDeconnexion") {
     $_SESSION['User'] = null;
 }
+if ($methodeGet == "getUser") {
+    $jsonData->setUser($userReturne);
+}
 
 //----------------POST
 
 
 if ($methodePost == "postUserInscription") {
     $jsonData = $order->postUserInscription($param, $jsonData, $user);
+}
+
+if ($methodePost == "postGame") {
+    $jsonData = $order->postGame($param, $jsonData, $game);
 }
 
 echo json_encode($jsonData->jsonSerialize());
