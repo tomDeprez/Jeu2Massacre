@@ -73,11 +73,12 @@ class Order
         $gameSave = $param->{'x'}->{'game'};
         $nameSave = $param->{'x'}->{'name'};
         $idUser = json_decode($param->{'x'}->{'user'})->id;
-        $game->posteGameWithIdUser($gameSave, $nameSave, $idUser);
+        $game->posteGameWithIdUser($gameSave, $nameSave, $idUser, json_decode($param->{'x'}->{'game'})->score);
         return $jsonData;
     }
 
-    public function getGame(){
+    public function getGame()
+    {
         $idGame = $param->{'x'}->{'idGame'};
         $jsonData->setData(getGameWithIdGame($idGame));
         return $jsonData;
