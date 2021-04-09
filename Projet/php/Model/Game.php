@@ -36,4 +36,16 @@ class Game
         }
         return $this;
     }
+    public function getAllGameWithIdUser(){
+        $stmt = $this->dbh->prepare("SELECT * FROM `game` WHERE id = :id");
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $retour = $stmt->fetch();
+        if ($retour != false) {
+            $this->id = $retour['id'];
+            $this->name = $retour['name'];
+            $this->game = $retour['game'];
+        }
+        return $this;
+    }
 }

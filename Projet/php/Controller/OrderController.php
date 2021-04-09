@@ -77,7 +77,7 @@ class Order
         return $jsonData;
     }
 
-    public function getGame()
+    public function getAllGame()
     {
         $idGame = $param->{'x'}->{'idGame'};
         $jsonData->setData(getGameWithIdGame($idGame));
