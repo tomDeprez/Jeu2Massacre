@@ -54,6 +54,7 @@ $('body').on('click', '#ballon', function () {
     }
     else if ($nbrClick === 1) {
         fallElement();
+
         setTimeout(function () {
             $score1 = (10 - ($('#cardPile .element').length)) * 3;
             console.log("Score : " + $score1);
@@ -73,9 +74,38 @@ $('body').on('click', '#ballon', function () {
             $score3 = ((10 - (($score1 / 3) + ($score2 / 2))) - ($('#cardPile .element').length));
             $score = $score1 + $score2 + $score3;
             alert("Score : " + $score + "\nRecommencer");
-            var retour = new Partie("Partie1", $score);
-            retour.setDate();
-            retour.AfficherPartie();
+            var game = new Partie("Partie1", $score);
+            game.setDate();
+            $.ajax({
+                type:"POST",
+                url: "php/Controller/PrincipalController.php",
+                data: "GET=getUser",
+                success: function retour(retour) {
+                    var retour = JSON.parse(retour);
+                    if (retour.user != "" && retour.user != null) {
+                        var param = JSON.stringify({
+                            x: {
+                                'game': game,
+                                'name': game.getNom(),
+                                'user': retour.user
+                            }
+                        });
+                        $.ajax({
+                            type: "POST",
+                            url: "php/Controller/PrincipalController.php",
+                            data: "POST=postGame&PARAM=" + param,
+                            success: function retour2(retour2) {
+                                console.log(retour2);
+                                retour2 = JSON.parse(retour2);
+                                console.log(retour2);
+                            }
+                        })
+                    } else {
+                        console.log("coucou");
+                        console.log(retour);
+                    }
+                }
+            })
         }, 500);
     }
 });

@@ -33,8 +33,8 @@
                             placeholder="Entrez votre mot de passe">
                     </div>
                     <div class="form-group col-12">
-                        <label for="exampleInputPassword1">Confirmez password</label>
-                        <input type="password" name="password-confirm" class="form-control" id="exampleInputPassword1"
+                        <label for="exampleInputPassword2">Confirmez password</label>
+                        <input type="password" name="password-confirm" class="form-control" id="exampleInputPassword2"
                             placeholder="Confirmez votre mot de passe">
                     </div>
                     <div class=col-12>

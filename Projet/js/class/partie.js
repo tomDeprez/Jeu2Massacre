@@ -2,6 +2,8 @@
 
 class Partie {
 
+    ArrayPostit = [];
+
     constructor(nom, score) {
         this.date = new Date();
         this.nom = nom;
@@ -33,6 +35,10 @@ class Partie {
 
     getDate() {
         return this.date;
+    }
+
+    AddPostIt(postIt) {
+        this.ArrayPostit.push(postIt);
     }
 
     AfficherPartie() {
