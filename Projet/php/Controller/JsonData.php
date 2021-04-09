@@ -5,6 +5,7 @@ class JsonData
     private $code;
     private $data;
     private $message;
+    private $user;
 
 
     public function setCode($code)
