@@ -21,6 +21,7 @@ class Game
         $stmt = $this->dbh->prepare("INSERT INTO `score`(`idUser`, `idGame`, `score`) VALUES (:idUser,:idGame,:score)");
         $stmt->bindValue(':idUser', $idUser, PDO::PARAM_INT);
         $stmt->bindValue(':idGame', $id, PDO::PARAM_INT);
+        $stmt->bindValue(':score', $score);
         $stmt->execute();
     }
     public function getGameWithIdGame($id){

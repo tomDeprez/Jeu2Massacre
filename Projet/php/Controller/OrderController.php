@@ -72,8 +72,8 @@ class Order
     {
         $gameSave = $param->{'x'}->{'game'};
         $nameSave = $param->{'x'}->{'name'};
-        $idUser = json_decode($param->{'x'}->{'user'});
-        $game->posteGameWithIdUser($gameSave, $nameSave, $idUser, json_decode($param->{'x'}->{'game'})->score);
+        $idUser = $param->{'x'}->{'user'}->id;
+        $game->posteGameWithIdUser(json_encode($gameSave), $nameSave, $idUser, $param->{'x'}->{'game'}->score);
         return $jsonData;
     }
 

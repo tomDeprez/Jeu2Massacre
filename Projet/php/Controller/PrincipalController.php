@@ -62,7 +62,7 @@ if ($methodeGet == "getUserDeconnexion") {
     $_SESSION['User'] = null;
 }
 if ($methodeGet == "getUser") {
-    $jsonData->setUser($userReturne);
+    $jsonData->setUser($userReturne->jsonSerialize());
 }
 
 //----------------POST
