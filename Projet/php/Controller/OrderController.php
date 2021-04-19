@@ -78,10 +78,10 @@ class Order
         return $jsonData;
     }
 
-    public function getAllGame($param, $jsonData)
+    public function getAllGame($param, $jsonData, $game)
     {
         $idUser = $param->{'x'}->{'idUser'};
-        $jsonData->setData(getAllGameWithIdUser($idUser));
+        $jsonData->setData($game->getAllGameWithIdUser($idUser));
         return $jsonData;
     }
 }

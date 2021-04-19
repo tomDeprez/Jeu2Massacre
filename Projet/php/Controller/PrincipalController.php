@@ -66,7 +66,7 @@ if ($methodeGet == "getUser") {
 }
 
 if ($methodeGet == "getAllgame") {
-    $jsonData = $order->getAllGame($param, $jsonData);
+    $jsonData = $order->getAllGame($param, $jsonData, $game);
 }
 
 //----------------POST
