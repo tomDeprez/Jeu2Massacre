@@ -1,6 +1,8 @@
 // $('#myModal1').modal('show');
 $nb = 1;
 var correctCards = 0;
+var game = new Partie("", "");
+var postiteNumber = 0;
 
 
 $.ajax({
@@ -60,6 +62,46 @@ $('.element').draggable({
         $(".pos").removeClass("border");
         $(this).css("cursor", "grab");
 
+    }
+});
+
+$('.post-it').draggable({
+    cursor: 'grabbing',
+    // opacity: 0.35,
+    zIndex: 100,
+    // helper: 'clone',
+    start: function (event, ui) {
+        $source = $(this).attr("src");
+        $(this).css("cursor", "grabbing");
+    },
+    stop: function (event, ui) {
+        $(this).css("cursor", "grab");
+        $(".overlay").text('New test');
+        var ArrayPostit = game.getPostites();
+        var postiteIfExiste = true;
+        var postiteExiste = null;
+        var numberpos = 0;
+        ArrayPostit.forEach(element => {
+            if (element.getElement()[0] == $(this)[0]) {
+                postiteIfExiste = false;
+                postiteExiste = element;
+            }
+            if (postiteIfExiste) {
+                numberpos = numberpos + 1;   
+            }
+        });
+        if (postiteIfExiste) {
+            var postite = new Postit($(this), postiteNumber, $(this).position().top, $(this).position().left);
+            game.AddPostIt(postite);
+            game.AfficherPartie();
+            postiteNumber = postiteNumber + 1;
+        } else {
+            var postite = postiteExiste;
+            postite.setX($(this).position().top);
+            postite.setY($(this).position().left);
+            game.updatePostite(postite, numberpos);
+            game.AfficherPartie();
+        }
     }
 });
 
@@ -137,11 +179,12 @@ $('body').on('click', '.active', function () {
             $(".score").html($score);
             $('#myModal').modal('show');
         }, 550);
-        var game = new Partie("Partie"+num, $score);
+        game.setNom("Partie" + num);
+        game.setScore($score);
         console.log($score);
         num++;
         $.ajax({
-            type:"POST",
+            type: "POST",
             url: "php/Controller/PrincipalController.php",
             data: "GET=getUser",
             success: function retour(retour) {

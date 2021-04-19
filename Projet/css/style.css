@@ -177,3 +177,7 @@ body{
     background: #c13b2a;
   }
   
+  .remove-image:active {
+    border: 0;
+    transition: all .2s ease;
+  }

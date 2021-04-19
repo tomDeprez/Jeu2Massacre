@@ -41,10 +41,18 @@ class Partie {
         this.ArrayPostit.push(postIt);
     }
 
+    getPostites() {
+        return this.ArrayPostit;
+    }
+
+    updatePostite(postIt, pos){
+        this.ArrayPostit[pos] = postIt;
+    }
+
     AfficherPartie() {
         var partie = new Partie(this.nom, this.score);
         var retour = JSON.stringify(partie);
-        console.log(retour);
+        console.log(this);
     }
 
 

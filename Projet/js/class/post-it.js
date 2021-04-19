@@ -1,15 +1,21 @@
-class Postite {
+class Postit {
 
-
+    element;
     text;
     x;
     y;
 
-    constructor(text, x, y) {
+    constructor(element, text, x, y) {
+        this.element = element;
         this.text = text;
         this.x = x;
         this.y = y;
     }
+
+    getElement() {
+        return this.element;
+    }
+
 
     //Méthodes set
     setText(text) {
