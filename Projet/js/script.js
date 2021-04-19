@@ -2,6 +2,37 @@
 $nb = 1;
 var correctCards = 0;
 
+
+$.ajax({
+    type:"POST",
+    url: "php/Controller/PrincipalController.php",
+    data: "GET=getUser",
+    success: function retour(retour) {
+        var retour = JSON.parse(retour);
+        if (retour.user != "" && retour.user != null) {
+            var param = JSON.stringify({
+                x: {
+                    'idUser': retour.user.id
+                }
+            });
+            $.ajax({
+                type: "POST",
+                url: "php/Controller/PrincipalController.php",
+                data: "GET=getAllgame&PARAM=" + param,
+                success: function retour2(retour2) {
+                    console.log(retour2);
+                    retour2 = JSON.parse(retour2);
+                    console.log(retour2);
+                }
+            })
+            console.log(param);
+        } else {
+            console.log("coucou");
+            console.log(retour);
+        }
+    }
+})
+
 $('body').on('click', '#cardPile .suppr', function () {
     $(this).parent().addClass("pos");
     $(this).parent().droppable("option", "disabled", false);

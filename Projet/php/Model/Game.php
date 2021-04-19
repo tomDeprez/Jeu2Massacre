@@ -37,6 +37,7 @@ class Game
         }
         return $this;
     }
+
     public function getAllGameWithIdUser($id){
         $stmt = $this->dbh->prepare("SELECT G.game FROM score SINNER JOIN game G ON S.idGame = G.id WHERE S.idUser = :id_user;");
         $stmt->bindValue(':id_user', $id, PDO::PARAM_INT);
@@ -47,6 +48,6 @@ class Game
             $this->name = $retour['name'];
             $this->game = $retour['game'];
         }
-        return $this;
+        return ["games" => $this];
     }
 }
