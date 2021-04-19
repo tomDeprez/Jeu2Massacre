@@ -13,11 +13,12 @@
 
 <body>
     <div class="container-fluid" style="width:100%">
-        <img src="img/stand.svg" height="130%" alt="" style="position:absolute; left: 10px; top:10px">
+      
         <div class="row">
             <div class="col-9">
                 <div class="row">
                     <div class="col-12">
+                        <img src="img/stand.svg" width="98%" alt="" style="position:absolute; left: 10px; top:10px">
                         <div class="row mt-5">
                             <div class="col-1 offset-1" style="height: 100%;">
                                 <div class="row justify-content-center">
@@ -46,14 +47,63 @@
                                 </div>
                             </div>
                             <div class="col-1 offset-1" style="height: 100%;">
-                                <div class="row justify-content-center border" style="height:100px">
-                                      
+                                <div class="row file-upload justify-content-center" style="height:100px; position:relative">
+                                    <div class="col">
+                                        <div class="row file-upload-btn justify-content-center" type="button"
+                                            onclick="$('.file-upload-input').trigger('click')">
+                                            <i class="fas fa-plus fa-3x"></i>
+                                            <input class="file-upload-input" type='file' onchange="readURL(this);"
+                                            accept="image/*" />
+                                        </div>
+                                       
+                                        <div class="row file-upload-content">                                               
+                                                <img class="file-upload-image element" src=""  height="100px">
+                                        </div>
+                                        <div class="row remove-image justify-content-center" onclick="removeUpload()">
+                                            <i class="fas fa-times fa-1x"></i>
+                                        </div>
                                     </div>
+                                </div>
                             </div>
                             <div class="col-1 ml-4" style="height: 100%;">
-                                <div class="row justify-content-center border" style="height:100px">
+                                <div class="row file-upload2 justify-content-center" style="height:100px; position:relative">
+                                    <div class="col">
+                                        <div class="row file-upload-btn justify-content-center" type="button"
+                                            onclick="$('.file-upload-input').trigger('click')">
+                                            <i class="fas fa-plus fa-3x"></i>
+                                            <input class="file-upload-input" type='file' onchange="readURL2(this);"
+                                            accept="image/*" />
+                                        </div>
                                        
+                                        <div class="row file-upload-content">                                               
+                                                <img class="file-upload-image element" src=""  height="100px">
+                                        </div>
+                                        <div class="row remove-image justify-content-center" onclick="removeUpload2()">
+                                            <i class="fas fa-times fa-1x"></i>
+                                        </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-1 ml-4">
+                                <div class="row file-upload3 justify-content-center">
+                                    <div class="col">                        
+                                        <div class="row image-upload-wrap" style="height:100px">
+                                                <input class="file-upload-input" type='file' onchange="readURL3(this);"
+                                                    accept="image/*" />
+                                                <div class="drag-text">
+                                                    <h3>Drag and drop votre image</h3>
+                                                </div>
+                                            </div>
+                                        
+                                        <div class="row file-upload-content">                                               
+                                                <img class="file-upload-image element" src=""  height="100px">
+                                        </div>
+                                        <div class="row remove-image justify-content-center" onclick="removeUpload3()">
+                                            <i class="fas fa-times fa-1x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -125,37 +175,36 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-2">
-                <div class="row">
-                    <div class="file-upload col-12">
-                        <div class="row">
-                            <button class="file-upload-btn col-12" type="button"
-                                onclick="$('.file-upload-input').trigger('click')">Ajouter une image</button>
-
-                            <div class="image-upload-wrap col-12" style="height: 40px;">
-                                <input class="file-upload-input" type='file' onchange="readURL(this);"
-                                    accept="image/*" />
-                                <div class="drag-text">
-                                </div>
-                            </div>
-                            <div class="file-upload-content col-12">
-                                <div class="row">
-                                    <img class="file-upload-image element" src=""  height="140px">
-                                    <div class="image-title-wrap">
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="remove-image col-12" type="button"
-                                onclick="removeUpload()">Suppr image</button>
+            </div>   
+            <div class="col-3">
+            <img src="img/panel.png" width="95%" alt="" style="position:absolute; left: 10px; top:-50px"> 
+                <div class="row ">
+                    <div class="col text-right">
+                        <i class="fas fa-user-circle text-light fa-2x mt-2" onclick="window.location.href = 'connexion.php'" style="cursor:pointer;position:relative;z-index:1"></i>
+                    </div>
+                     
+                </div>
+                
+                <div class="row" style="margin-top:23rem; margin-left:2.3rem; max-width:83%; max-height:258px;overflow-y: scroll;scrollbar-width: thin;">
+                    <div class="col tabScores">
+                        <div class="row mb-3 justify-content-center">
+                            <h5 class="text-light font-weight-bold text-right">Partie 1 : 25 points <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Score réalisé le 19/04/2021"></i></h5>
+                        </div>
+                        <div class="row mb-3 justify-content-center">
+                            <h5 class="text-light font-weight-bold text-right">Partie 2 : 18 points <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Score réalisé le 19/04/2021"></i></h5>
+                        </div>
+                        <div class="row mb-3 justify-content-center">
+                            <h5 class="text-light font-weight-bold text-right">Partie 3 : 10 points <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Score réalisé le 19/04/2021"></i></h5>
+                        </div>
+                        <div class="row mb-3 justify-content-center">
+                            <h5 class="text-light font-weight-bold text-right">Partie 4 : 28 points <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Score réalisé le 19/04/2021"></i></h5>
+                        </div>
+                        <div class="row mb-3 justify-content-center">
+                            <h5 class="text-light font-weight-bold text-right">fcezvbezvbzevbezbfveb nefefzzzzzzzzdszdazefefbvfe : 5 points <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Score réalisé le 19/04/2021"></i></h5>
                         </div>
                     </div>
-                </div>
-                   
-            </div>
-            <div class="col-1 text-right">
-                <i class="fas fa-user-circle text-light fa-2x mt-3" onclick="window.location.href = 'connexion.php'" style="cursor:pointer"></i>
-            </div>
+                </div>     
+            </div>   
            
         </div>
     </div>
