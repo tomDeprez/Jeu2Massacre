@@ -6,7 +6,7 @@ var postiteNumber = 0;
 
 
 $.ajax({
-    type:"POST",
+    type: "POST",
     url: "php/Controller/PrincipalController.php",
     data: "GET=getUser",
     success: function retour(retour) {
@@ -46,6 +46,7 @@ $('body').on('click', '#cardPile .suppr', function () {
 $('.element').draggable({
     cursor: 'grabbing',
     revert: true,
+    helper: 'clone',
     revertDuration: 0,
     start: function (event, ui) {
         $source = $(this).attr("src");
@@ -68,16 +69,13 @@ $('.element').draggable({
 
 $('.post-it').draggable({
     cursor: 'grabbing',
-    // opacity: 0.35,
     zIndex: 100,
-    // helper: 'clone',
     start: function (event, ui) {
         $source = $(this).attr("src");
         $(this).css("cursor", "grabbing");
     },
     stop: function (event, ui) {
         $(this).css("cursor", "grab");
-        $(".overlay").text('New test');
         var ArrayPostit = game.getPostites();
         var postiteIfExiste = true;
         var postiteExiste = null;
@@ -88,7 +86,7 @@ $('.post-it').draggable({
                 postiteExiste = element;
             }
             if (postiteIfExiste) {
-                numberpos = numberpos + 1;   
+                numberpos = numberpos + 1;
             }
         });
         if (postiteIfExiste) {

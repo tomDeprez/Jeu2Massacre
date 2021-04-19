@@ -108,18 +108,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row justify-content-center border" id="post-it" style="height:100px">
-                                    <img class="post-it"
-                                        src="img/kisspng-post-it-note-paper-link-free-sticky-notes-clip-art-post-it-5acbacab35a629.8737999715232974512198.png"
-                                        height="100px">
-                                    <h1 class="overlay"></h1>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+               
+                   
+            
+                
                 <div class="row mt-5">
                     <div class="col">
+                        <div class="post-it" style="position:absolute;top:-10px;left:120px">
+                            <img class=""
+                                src="img/post-it.png"
+                                height="180px">
+                            <textarea>Anthony : 25pts&#10;Célia : 19pts&#10;Sarah : 16pts&#10;Romain : 30pts</textarea> 
+                        </div>
                         <div id="cardPile" style="position: relative; top:60px; left:6px">
                             <div class="row"
                                 style="position: absolute; top: 0; left: 50%; transform: translate(-50%,0);">
@@ -185,6 +189,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="allCan"></div>
             </div>
             <div class="col-3">
                 <img src="img/panel.png" width="95%" alt="" style="position:absolute; left: 10px; top:-50px">
@@ -195,41 +200,25 @@
                             style="cursor:pointer;position:relative;z-index:1"></i>
                     </div>
                 </div>
-                <div class="col-2">
-                    <div class="row">
-                        <div class="file-upload col-12">
-                            <div class="row">
-                                <button class="file-upload-btn col-12" type="button"
-                                    onclick="$('.file-upload-input').trigger('click')">Ajouter une image</button>
-
-                                <div class="image-upload-wrap col-12" style="height: 40px;">
-                                    <input class="file-upload-input" type='file' onchange="readURL(this);"
-                                        accept="image/*" />
-                                    <div class="drag-text">
-                                    </div>
-                                </div>
-                                <div class="file-upload-content col-12">
-                                    <div class="row">
-                                        <img class="file-upload-image element" src="" height="140px">
-                                        <div class="image-title-wrap">
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="remove-image col-12" type="button" onclick="removeUpload()">Suppr
-                                    image</button>
-                            </div>
+                <div class="row" style="margin-top:23rem; margin-left:2.3rem; max-width:83%; max-height:258px;overflow-y: scroll;scrollbar-width: thin;">
+                    <div class="col tabScores">
+                        <div class="row mb-3 justify-content-center">
+                            <h5 class="text-light font-weight-bold text-right">Partie 1 : 25 points <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Score réalisé le 19/04/2021"></i></h5>
                         </div>
-
-                    </div>
-
-                    <div class="row"
-                        style="margin-top:23rem; margin-left:2.3rem; max-width:83%; max-height:258px;overflow-y: scroll;scrollbar-width: thin;">
-                        <div class="col tabScores">
-
+                        <div class="row mb-3 justify-content-center">
+                            <h5 class="text-light font-weight-bold text-right">Partie 2 : 18 points <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Score réalisé le 19/04/2021"></i></h5>
+                        </div>
+                        <div class="row mb-3 justify-content-center">
+                            <h5 class="text-light font-weight-bold text-right">Partie 3 : 10 points <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Score réalisé le 19/04/2021"></i></h5>
+                        </div>
+                        <div class="row mb-3 justify-content-center">
+                            <h5 class="text-light font-weight-bold text-right">Partie 4 : 28 points <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Score réalisé le 19/04/2021"></i></h5>
+                        </div>
+                        <div class="row mb-3 justify-content-center">
+                            <h5 class="text-light font-weight-bold text-right">fcezvbezvbz evbezbfveb : 5 points <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Score réalisé le 19/04/2021"></i></h5>
                         </div>
                     </div>
-                </div>
-
+                </div>   
             </div>
         </div>
 
@@ -274,6 +263,7 @@
 </script>
 <script src="js/class/partie.js"></script>
 <script src="js/class/post-it.js"></script>
+<script src="js/allCan.js"></script>
 <script src="js/class/image.js"></script>
 <script src="js/script.js"></script>
 <script src="js/addPicture.js"></script>
