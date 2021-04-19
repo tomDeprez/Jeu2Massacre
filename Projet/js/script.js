@@ -25,7 +25,9 @@ $.ajax({
                     console.log(retour2);
                     retour2 = JSON.parse(retour2);
                     console.log(retour2);
-                    document.getElementsByClassName("tabScores")[0].innerHTML = "<div class='row mb-3 justify-content-center'><h5 class='text-light font-weight-bold text-right'>Partie 1 : 25 points <i class='fas fa-info-circle' data-toggle='tooltip' data-placement='top' title='Score réalisé le 19/04/2021'></i></h5></div>";
+                    for (let i = 0; i < retour2.length; i++) {
+                        document.getElementsByClassName("tabScores")[0].innerHTML = "<div class='row mb-3 justify-content-center'><h5 class='text-light font-weight-bold text-right'>" + retour2.nom + ":" + retour2.score + "<i class='fas fa-info-circle' data-toggle='tooltip' data-placement='top' title='Score réalisé'+ retour2.date_game + ></i></h5></div>";
+                    }
                 }
             })
             console.log(param);
