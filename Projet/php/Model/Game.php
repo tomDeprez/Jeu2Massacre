@@ -13,9 +13,10 @@ class Game
     }
 
     public function posteGameWithIdUser($game, $name, $idUser, $score){
-        $stmt = $this->dbh->prepare("INSERT INTO `game`(`game`, `name`) VALUES (:game,:name)");
+        $stmt = $this->dbh->prepare("INSERT INTO `game`(`game`, `name`, `date_game`) VALUES (:game,:name,:date)");
         $stmt->bindValue(':game', $game, PDO::PARAM_STR);
         $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+        $stmt->bindValue(':date', date("Y-m-d H:i:s"));
         $stmt->execute();
         $id = $this->dbh->lastInsertId();
         $stmt = $this->dbh->prepare("INSERT INTO `score`(`idUser`, `idGame`, `score`) VALUES (:idUser,:idGame,:score)");

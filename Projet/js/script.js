@@ -68,6 +68,7 @@ $score = 0;
 $score1 = 0;
 $score2 = 0;
 $score3 = 0;
+var num = 1;
 
 $('body').on('click', '.active', function () {
     $nbrClick++;
@@ -80,6 +81,7 @@ $('body').on('click', '.active', function () {
         setTimeout(function () {
             $score1 = (10 - ($('#cardPile .element').length)) * 3;
             console.log("Score : " + $score1);
+            IncrementerScore($score1);
         }, 550);
 
     }
@@ -90,6 +92,7 @@ $('body').on('click', '.active', function () {
         setTimeout(function () {
             $score2 = ((10 - ($score1 / 3)) - ($('#cardPile .element').length)) * 2;
             console.log("Score : " + $score2);
+            IncrementerScore($score2);
         }, 550);
 
     }
@@ -99,10 +102,46 @@ $('body').on('click', '.active', function () {
         setTimeout(function () { $this.remove(); }, 260);
         setTimeout(function () {
             $score3 = ((10 - (($score1 / 3) + ($score2 / 2))) - ($('#cardPile .element').length));
-            $score = $score1 + $score2 + $score3;
+            IncrementerScore($score3);
             $(".score").html($score);
             $('#myModal').modal('show');
         }, 550);
+        var game = new Partie("Partie"+num, $score);
+        console.log($score);
+        num++;
+        $.ajax({
+            type:"POST",
+            url: "php/Controller/PrincipalController.php",
+            data: "GET=getUser",
+            success: function retour(retour) {
+                var retour = JSON.parse(retour);
+                if (retour.user != "" && retour.user != null) {
+                    var param = JSON.stringify({
+                        x: {
+                            'game': game,
+                            'name': game.getNom(),
+                            'score': game.getScore(),
+                            'user': retour.user
+                        }
+                    });
+                    $.ajax({
+                        type: "POST",
+                        url: "php/Controller/PrincipalController.php",
+                        data: "POST=postGame&PARAM=" + param,
+                        success: function retour2(retour2) {
+                            console.log(retour2);
+                            retour2 = JSON.parse(retour2);
+                            console.log(retour2);
+                        }
+                    })
+                    console.log(param);
+                } else {
+                    console.log("coucou");
+                    console.log(retour);
+                }
+            }
+        })
+
 
     }
 });
@@ -131,6 +170,11 @@ function getCan() {
     var maxNumber = 10 // le maximum
     var randomnumber = Math.floor(Math.random() * (maxNumber) + minNumber); // la fonction magique
     return randomnumber;
+}
+
+function IncrementerScore(int) {
+    $score = $score + int;
+    return $score;
 }
 
 
