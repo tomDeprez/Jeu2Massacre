@@ -65,6 +65,10 @@ if ($methodeGet == "getUser") {
     $jsonData->setUser($userReturne->jsonSerialize());
 }
 
+if ($methodeGet == "getAllgame") {
+    $jsonData->getAllGame();
+}
+
 //----------------POST
 
 

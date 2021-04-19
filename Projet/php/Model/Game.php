@@ -37,12 +37,12 @@ class Game
         }
         return $this;
     }
-    public function getAllGameWithIdUser(){
-        $stmt = $this->dbh->prepare("SELECT * FROM `game` WHERE id = :id");
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    public function getAllGameWithIdUser($id){
+        $stmt = $this->dbh->prepare("SELECT G.game FROM score SINNER JOIN game G ON S.idGame = G.id WHERE S.idUser = :id_user;");
+        $stmt->bindValue(':id_user', $id, PDO::PARAM_INT);
         $stmt->execute();
         $retour = $stmt->fetch();
-        if ($retour != false) {
+        if (!empty($retour)) {
             $this->id = $retour['id'];
             $this->name = $retour['name'];
             $this->game = $retour['game'];
